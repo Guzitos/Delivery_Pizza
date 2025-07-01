@@ -1,0 +1,12 @@
+# Ignora arquivos de cache do Python
+__pycache__/
+*.pyc
+
+# Ignora o arquivo .env
+environment/.env
+
+# Ignora arquivos específicos do ambiente de desenvolvimento (opcional, mas recomendado)
+.vscode/ # Se você usa VS Code e tem configurações específicas de usuário
+.idea/   # Para usuários do PyCharm (ignora configurações do IDE)
+venv/    # Se sua virtualenv estiver na raiz do projeto (cuidado ao usar este se você commitou sua venv antes)
+.env/    # Se você tiver uma pasta .env (não um arquivo .env)
