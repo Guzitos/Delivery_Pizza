@@ -9,4 +9,3 @@ environment/.env
 .vscode/ # Se você usa VS Code e tem configurações específicas de usuário
 .idea/   # Para usuários do PyCharm (ignora configurações do IDE)
 venv/    # Se sua virtualenv estiver na raiz do projeto (cuidado ao usar este se você commitou sua venv antes)
-.env/    # Se você tiver uma pasta .env (não um arquivo .env)
