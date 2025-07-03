@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 from typing import Optional, List
 
 
@@ -6,8 +6,8 @@ class UsuariosSchema(BaseModel):
     nome: str
     email: str
     senha: str
-    ativo: Optional[bool]
-    admin: Optional[bool]
+    ativo: Optional[bool] = True
+    admin: Optional[bool] = False
 
     class Config:
         from_attributes = True
@@ -19,7 +19,7 @@ class PedidoSchema(BaseModel):
         from_attributes = True
 
 class LoginSchema(BaseModel):
-    email: str
+    email: EmailStr
     senha: str
 
     class Config:

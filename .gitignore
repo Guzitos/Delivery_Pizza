@@ -2,8 +2,6 @@
 __pycache__/
 *.pyc
 
-environment/.env
-
 # Ignora arquivos específicos do ambiente de desenvolvimento (opcional, mas recomendado)
 .vscode/
 .idea/
