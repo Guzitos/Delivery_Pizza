@@ -38,16 +38,14 @@ app.add_middleware(
 dirname = os.path.dirname(__file__)
 app.mount("/styles", StaticFiles(directory=os.path.join(dirname, 'styles')), name="styles")
 app.mount("/js", StaticFiles(directory=os.path.join(dirname, "javascript")), name="js_files")
-app.mount("/css", StaticFiles(directory=os.path.join(dirname, "styles")), name="css_files")
+
 
 templates = Jinja2Templates(directory="templates")
-@app.get("/", response_class=HTMLResponse)
-async def home_page(request: Request):
-    return templates.TemplateResponse("singin.html", {"request": request})
 
-@app.get("/login", response_class=HTMLResponse)
-async def login_page_request(request: Request):
-    return templates.TemplateResponse("login.html", {"request": request})
+
+@app.get("/")
+async def welcome_page(request: Request):
+    return templates.TemplateResponse("home.html", {"request": request})
 
 
 bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -55,8 +53,10 @@ oauth2_schema = OAuth2PasswordBearer(tokenUrl="auth/login-form")
 
 from route.auth_routes import auth_router
 from route.order_routes import order_router
+from route.account_routes import account_router
 
 app.include_router(auth_router)
 app.include_router(order_router)
+app.include_router(account_router)
 
 #uvicorn main:app --reload

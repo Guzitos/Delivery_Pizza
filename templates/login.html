@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delivery Pizza</title>
     <script src="/js/login.js"></script>
-    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="/styles/login.css">
 </head>
 <body>
     <div class="login-container">
@@ -22,8 +22,10 @@
             <button type="submit">Entrar</button>
         </form>
         <div id="message"></div>
-        <p>Não tem uma conta? <a href="/">Cadastre-se aqui</a></p>
+        <div class="links-group">
+            <p>Criar uma conta? <a href="/sing_in">Cadastre-se aqui</a></p>
+            <button type="button" id="backToHomeButton">Voltar para a Página Inicial</button>
+        </div>
     </div>
-
 </body>
 </html>

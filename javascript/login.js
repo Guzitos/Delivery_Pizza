@@ -1,8 +1,7 @@
-// Seu arquivo: Delivery_Pizza/Pizzaria/Guilherme/pycham/javascript/login.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const messageDiv = document.getElementById('message');
+    const backToHomeButton = document.getElementById('backToHomeButton');
 
     // **CORREÇÃO CRÍTICA AQUI:** A URL DEVE SER '/auth/login'
     const apiUrl = '/auth/login'; // Corresponde a prefixo /auth + rota /login
@@ -64,4 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
             messageDiv.className = 'message error';
         }
     });
+        if (backToHomeButton) {
+        backToHomeButton.addEventListener('click',() => {
+            window.location.href = '/';
+        });
+    } else {
+            console.warn("Botão 'backToHomeButton' não encontrado no DOM. O redirecionamento não será ligado.");
+    }
+
 });
