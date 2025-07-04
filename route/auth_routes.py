@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from database.models import Usuario
-from dependencies.dependencies import verificar_token
-from main import bcrypt_context, ACCESS_TOKEN_EXPIRE_MINUTES, ALGORITHM, SECRET_KEY
+from dependencies.dependencies import verificar_token,bcrypt_context
+from main import ACCESS_TOKEN_EXPIRE_MINUTES, ALGORITHM, SECRET_KEY
 from jose import jwt
 from datetime import datetime, timedelta, timezone
 
@@ -28,3 +28,5 @@ async def use_refresh_token(usuario: Usuario = Depends(verificar_token)):
         "access_token": access_token,
         "token_type": "Bearer"
         }
+
+

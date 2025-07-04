@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToHomeButton = document.getElementById('backToHomeButton');
 
 
-    const apiUrl = '/account/create_account';
+    const apiUrl = '/auth/create_account';
 
     if (!registrationForm) {
         console.error("Formulário de registro com ID 'registrationForm' não encontrado!");

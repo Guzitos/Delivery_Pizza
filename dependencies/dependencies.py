@@ -3,8 +3,10 @@ from jose import jwt, JWTError
 from sqlalchemy.orm import sessionmaker, Session
 
 from main import SECRET_KEY, ALGORITHM, oauth2_schema
+from passlib.context import CryptContext
 from database.models import db, Usuario
 
+bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def pegar_sessao():
     try:

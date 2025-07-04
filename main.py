@@ -23,7 +23,7 @@ origins = [
     "http://127.0.0.1:3000",
     "http://127.0.0.1:5500",
     "http://localhost:8001"
-    # ADICIONE O ENDEREÇO ONDE SEU `singin.html` ESTIVER RODANDO/ABERTO
+    # ADICIONE O ENDEREÇO ONDE SEU `signin.html` ESTIVER RODANDO/ABERTO
     # Em produção, este deve ser o domínio público do seu frontend (ex: "https://seusite.com")
 ]
 
@@ -42,13 +42,17 @@ app.mount("/js", StaticFiles(directory=os.path.join(dirname, "javascript")), nam
 
 templates = Jinja2Templates(directory="templates")
 
-
 @app.get("/")
 async def welcome_page(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
+@app.get("/signin")
+async def welcome_page(request: Request):
+    return templates.TemplateResponse("signin.html", {"request": request})
 
+@app.get("/login")
+async def login(request: Request):
+    return templates.TemplateResponse("login.html", {"request": request})
 
-bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_schema = OAuth2PasswordBearer(tokenUrl="auth/login-form")
 
 from route.auth_routes import auth_router

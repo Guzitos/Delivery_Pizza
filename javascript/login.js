@@ -3,8 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageDiv = document.getElementById('message');
     const backToHomeButton = document.getElementById('backToHomeButton');
 
-    // **CORREÇÃO CRÍTICA AQUI:** A URL DEVE SER '/auth/login'
-    const apiUrl = '/auth/login'; // Corresponde a prefixo /auth + rota /login
+    const apiUrl = '/auth/login';
 
     if (!loginForm) {
         console.error("Formulário de login com ID 'loginForm' não encontrado!");

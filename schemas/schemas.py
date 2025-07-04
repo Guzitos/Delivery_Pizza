@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 from typing import Optional, List
 
 class UsuariosSchema(BaseModel):
@@ -18,7 +18,7 @@ class PedidoSchema(BaseModel):
         from_attributes = True
 
 class LoginSchema(BaseModel):
-    email: EmailStr
+    email: str
     senha: str
 
     class Config:
