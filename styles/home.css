@@ -5,11 +5,12 @@ body {
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
-            flex-direction: column; /* Para empilhar o título e os botões */
+            background-color: #212121;
+            flex-direction: column;
+            color: #ffffff;
         }
         .container {
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -21,7 +22,7 @@ body {
         }
         .button-group {
             display: flex;
-            gap: 20px; /* Espaço entre os botões */
+            gap: 20px;
             justify-content: center;
         }
         .button {
@@ -30,19 +31,19 @@ body {
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            text-decoration: none; /* Remove sublinhado dos links */
-            color: white; /* Cor do texto do botão */
+            text-decoration: none;
+            color: white;
             transition: background-color 0.3s ease;
-            display: inline-block; /* Para que o padding funcione corretamente */
+            display: inline-block;
         }
         .button.login {
-            background-color: #007bff; /* Azul para Login */
+            background-color: #007bff;
         }
         .button.login:hover {
             background-color: #0056b3;
         }
         .button.register {
-            background-color: #28a745; /* Verde para Cadastrar */
+            background-color: #28a745;
         }
         .button.register:hover {
             background-color: #1e7e34;

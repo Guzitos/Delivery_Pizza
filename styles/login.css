@@ -1,92 +1,105 @@
- body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #ffffff;
-            flex-direction: column;
-        }
-        .container {
-            background-color: #988484;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(1, 0, 0, 0.1);
-            text-align: center;
-        }
-        h1 {
-            margin-bottom: 25px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .form-group input {
-            width: calc(100% - 20px);
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        button[type="submit"] {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 100px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
-        button[type="submit"]:hover {
-            background-color: #1e7e34;
-        }
-        .message {
-            margin-top: 15px;
-            padding: 10px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-        .message.success {
-            background-color: #d4edda;
-            color: #155724;
-        }
-        .message.error {
-            background-color: #f8d7da;
-            color: #721c24;
-        }
-        .links-group {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .links-group a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .links-group a:hover {
-            text-decoration: underline;
-        }
-        #backToHomeButton{
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
-        #backToHomeButton:hover {
-            background-color: #5a6268;
-        }
+body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #212121;
+        flex-direction: column;
+        color: #ffffff;
+}
+.login-container {
+    background-color: #2c2c2c;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+h1 {
+    margin-bottom: 25px;
+}
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border: 1px solid #555;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25), inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 100px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+button[type="submit"]:hover {
+    background-color: #1e7e34;
+}
+.message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+.links-group {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.links-group a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.links-group a:hover {
+    text-decoration: underline;
+}
+#backToHomeButton{
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+#backToHomeButton:hover {
+    background-color: #5a6268;
+}
