@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const messageDiv = document.getElementById('message');
-    const backToHomeButton = document.getElementById('backToHomeButton');
 
     const apiUrl = '/auth/login';
 
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             messageDiv.textContent = 'Verificando credenciais...';
             messageDiv.className = 'message';
 
-            const response = await fetch(apiUrl, { // Usando a apiUrl corrigida
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loginForm.reset();
 
                 setTimeout(() => {
-                    window.location.href = '/'; // Redireciona para uma página pós-login
+                    window.location.href = '/shopping';
                 }, 1500);
 
             } else {
@@ -62,12 +61,5 @@ document.addEventListener('DOMContentLoaded', () => {
             messageDiv.className = 'message error';
         }
     });
-        if (backToHomeButton) {
-        backToHomeButton.addEventListener('click',() => {
-            window.location.href = '/';
-        });
-    } else {
-            console.warn("Botão 'backToHomeButton' não encontrado no DOM. O redirecionamento não será ligado.");
-    }
 
 });

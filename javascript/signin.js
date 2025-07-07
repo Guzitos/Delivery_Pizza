@@ -1,9 +1,7 @@
-// Seu arquivo: Delivery_Pizza/Pizzaria/Guilherme/pycham/javascript/signin.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const registrationForm = document.getElementById('registrationForm');
     const messageDiv = document.getElementById('message');
-    const backToHomeButton = document.getElementById('backToHomeButton');
 
 
     const apiUrl = '/auth/create_account';
@@ -44,7 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 messageDiv.textContent = `Sucesso: ${result.mensagem}`;
                 messageDiv.className = 'message success';
                 registrationForm.reset();
-                window.location.href = '/login'; // Redireciona para o login após cadastro bem-sucedido
+                setTimeout(function() {
+                  window.location.href = '/login';
+                }, 1500)
             } else {
                 const errorMessage = result.detail || result.message || 'Erro desconhecido';
                 messageDiv.textContent = `Erro: ${errorMessage}`;
@@ -56,13 +56,4 @@ document.addEventListener('DOMContentLoaded', () => {
             messageDiv.className = 'message error';
         }
     });
-
-    // LÓGICA DO BOTÃO "VOLTAR PARA A PÁGINA INICIAL"
-    if (backToHomeButton){
-        backToHomeButton.addEventListener('click',() => {
-            window.location.href = '/';
-        });
-    } else {
-        console.warn("Botão 'backToHomeButton' não encontrado no DOM. O redirecionamento não será ligado.");
-    }
 });

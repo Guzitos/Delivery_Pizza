@@ -53,6 +53,11 @@ async def welcome_page(request: Request):
 async def login(request: Request):
     return templates.TemplateResponse("login.html", {"request": request})
 
+@app.get("/shopping")
+async def login(request: Request):
+    return templates.TemplateResponse("shopping.html", {"request": request})
+
+
 oauth2_schema = OAuth2PasswordBearer(tokenUrl="auth/login-form")
 
 from route.auth_routes import auth_router
