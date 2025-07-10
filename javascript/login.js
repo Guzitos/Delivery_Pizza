@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loginForm.reset();
 
                 setTimeout(() => {
-                    window.location.href = '/shopping';
+                    window.location.href = '/buy';
                 }, 1500);
 
             } else {

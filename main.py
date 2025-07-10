@@ -1,8 +1,6 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.templating import Jinja2Templates
-from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordBearer
-from fastapi.responses import HTMLResponse
 from dotenv import load_dotenv
 import os
 from fastapi.middleware.cors import CORSMiddleware
@@ -18,13 +16,11 @@ app = FastAPI()
 
 origins = [
     "http://localhost",
-    "http://localhost:3000", # Se seu frontend estiver rodando aqui
+    "http://localhost:3000",
     "http://127.0.0.1:8000",
     "http://127.0.0.1:3000",
     "http://127.0.0.1:5500",
     "http://localhost:8001"
-    # ADICIONE O ENDEREÇO ONDE SEU `signin.html` ESTIVER RODANDO/ABERTO
-    # Em produção, este deve ser o domínio público do seu frontend (ex: "https://seusite.com")
 ]
 
 app.add_middleware(
@@ -46,17 +42,16 @@ templates = Jinja2Templates(directory="templates")
 async def welcome_page(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 @app.get("/signin")
-async def welcome_page(request: Request):
+async def signin_page(request: Request):
     return templates.TemplateResponse("signin.html", {"request": request})
 
 @app.get("/login")
-async def login(request: Request):
+async def login_page(request: Request):
     return templates.TemplateResponse("login.html", {"request": request})
 
-@app.get("/shopping")
-async def login(request: Request):
-    return templates.TemplateResponse("shopping.html", {"request": request})
-
+@app.get("/buy")
+async def get_shopping_page(request: Request):
+    return templates.TemplateResponse("buy.html", {"request": request})
 
 oauth2_schema = OAuth2PasswordBearer(tokenUrl="auth/login-form")
 
