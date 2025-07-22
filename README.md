@@ -84,4 +84,4 @@ Integração com meios de pagamento
 🤝 Contribuições
 Contribuições são bem-vindas! Fique à vontade para abrir issues, pull requests ou entrar em contato.
 
-### Desenvolvido com 💻 por Guzitos
+## 👨‍💻 Autor @Guzitos
